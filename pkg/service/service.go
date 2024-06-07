@@ -7,7 +7,7 @@ import (
 
 type TaskService interface {
 	CreateTask(task *models.Task) error
-	// GetTaskByID(id int) (*models.Task, error)
+	GetTaskByID(id int) (*models.Task, error)
 	// GetAllTasks() ([]*models.Task, error)
 	// UpdateTask(task *models.Task) error
 	// DeleteTask(id int) error
@@ -25,4 +25,8 @@ func NewTaskService(repo repository.TaskRepository) TaskService {
 
 func (t *TaskServiceImpl) CreateTask(task *models.Task) error {
 	return t.repo.CreateTask(task)
+}
+
+func (t *TaskServiceImpl) GetTaskByID(id int) (*models.Task, error) {
+	return t.repo.GetTaskByID(id)
 }
