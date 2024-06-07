@@ -4,7 +4,6 @@ import (
 	"time"
 )
 
-// TaskStatus represents the status of a task.
 type TaskStatus int
 
 const (
